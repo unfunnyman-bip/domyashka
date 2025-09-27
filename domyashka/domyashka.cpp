@@ -25,3 +25,22 @@ void printgood(struct student arr[], int n, float minscore) {
         }
     }
 }
+int main() {
+    struct student list[5] = {
+        {"ivanov ivan", 20, 4.5},
+        {"petrov petr", 21, 3.8},
+        {"sidorov alex", 19, 4.9},
+        {"kozlov dmitry", 22, 3.2},
+        {"nikolaev sergey", 20, 4.1}
+    };
+    printf("all students:\n");
+    printall(list, 5);
+    float avg = avgs(list, 5);
+    printf("average score: %.2f\n", avg);
+    float minscore;
+    printf("enter minimum score: ");
+    scanf("%f", &minscore);
+    printf("students with score >= %.2f:\n", minscore);
+    printgood(list, 5, minscore);
+    return 0;
+}
